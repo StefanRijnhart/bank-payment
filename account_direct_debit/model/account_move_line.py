@@ -27,7 +27,7 @@ from openerp.osv import fields, orm
 class account_move_line(orm.Model):
     _inherit = "account.move.line"
 
-    def amount_to_receive(self, cr, uid, ids, name, arg={}, context=None):
+    def amount_to_receive(self, cr, uid, ids, name, arg=None, context=None):
         """
         Return the amount still to receive regarding all the debit orders
         (excepting canceled orders).
@@ -36,6 +36,8 @@ class account_move_line(orm.Model):
         """
         if not ids:
             return {}
+        if arg is None:
+            arg = {}
         cr.execute("""SELECT ml.id,
                     CASE WHEN ml.amount_currency > 0
                         THEN ml.amount_currency
