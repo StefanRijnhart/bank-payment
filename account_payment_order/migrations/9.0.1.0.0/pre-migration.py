@@ -72,6 +72,8 @@ TO_CREATE_PAYMENT_MODE_TYPE_XML_IDS = {
     'account_banking_sepa_direct_debit.sepa_direct_debit',
     'account_banking_sepa_credit_transfer.export_sepa_sct_001_001_03':
     'account_banking_sepa_credit_transfer.sepa_credit_transfer',
+    'account_banking_aggregate_payment.type_aggregate':
+    'account_banking_aggregate_payment.method_aggregate',
 }
 
 
